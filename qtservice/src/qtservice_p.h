@@ -67,6 +67,8 @@ public:
 
     QString displayName;
     QString serviceDescription;
+    QString serviceCustomPass;
+
     QtServiceController::StartupType startupType;
     QtServiceBase::ServiceFlags serviceFlags;
     QStringList args;
@@ -83,7 +85,8 @@ public:
     void startService();
     int run(bool asService, const QStringList &argList);
     bool install(const QString &account, const QString &password);
-
+    bool installSysD(const QString &account, const QString &password);
+    bool installUpStart(const QString &account, const QString &password);
     bool start();
 
     QString filePath() const;

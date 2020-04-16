@@ -96,6 +96,9 @@ public:
     bool sendCommand(int code);
 
 private:
+    bool uninstallSysD(const QString &serviceName);
+    bool uninstallUpStart();
+
     QtServiceControllerPrivate *d_ptr;
 };
 
@@ -140,6 +143,7 @@ public:
 
     ServiceFlags serviceFlags() const;
     void setServiceFlags(ServiceFlags flags);
+    void setServiceExecutable(const QString& exec);
 
     int exec();
 
